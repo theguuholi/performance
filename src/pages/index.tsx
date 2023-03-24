@@ -1,23 +1,28 @@
 import { SearchResults } from "@/components/SearchResult";
-import { FormEvent, useState } from "react";
+import { FormEvent, useCallback, useState } from "react";
 
 export default function Home() {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState([]);
 
-  async function handleSearch(event:  FormEvent) {
-    event.preventDefault()
+  async function handleSearch(event: FormEvent) {
+    event.preventDefault();
 
-    if(!search.trim()){
+    if (!search.trim()) {
       return;
     }
 
-    const response = await fetch(`http://localhost:3333/products?q=${search}`)
+    const response = await fetch(`http://localhost:3333/products?q=${search}`);
 
-    const data = await response.json()
-    setResults(data)
-
+    const data = await response.json();
+    setResults(data);
   }
+
+  const addToWishList = useCallback(async (id: number) => {
+    console.log(id);
+  }, []);
+  
+
   return (
     <div>
       <h1>Search</h1>
@@ -31,7 +36,7 @@ export default function Home() {
         <button type="submit">Buscar</button>
       </form>
 
-      <SearchResults results={results} />
+      <SearchResults results={results} onAddtoWishList={addToWishList} />
     </div>
   );
 }
