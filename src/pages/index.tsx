@@ -24,7 +24,7 @@ export default function Home() {
 
     const data = await response.json();
 
-    const totalPrice = data.reduce((total, product) => {
+    const totalPrice = data.reduce((total: any, product: any) => {
       return total + product.price;
     }, 0);
 
