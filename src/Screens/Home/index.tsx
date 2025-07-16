@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Button, ScrollView, Text, TextInput, View } from "react-native";
 import SearchResults from "../../Components/SearchResults";
 
@@ -14,13 +14,19 @@ const Home = () => {
     setData(data);
   };
 
+  const handleFollow = useCallback((id: string) => {
+    console.log("seguir", id);
+  }, []);
+  // useCallback memoriza a funcao
+  // useCallback e para memorizar uma funcao
+
   return (
     <View>
       <Text>Produtos</Text>
       <TextInput onChangeText={setName} placeholder="Nome do Cliente" />
       <Button title="Adicionar" onPress={handleSearch} />
       <ScrollView>
-        <SearchResults data={data} />
+        <SearchResults data={data} follow={handleFollow} />
       </ScrollView>
     </View>
   );

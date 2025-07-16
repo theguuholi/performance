@@ -1,11 +1,16 @@
 import { memo } from "react";
-import { Text } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
-const Component = ({ name, likes }: { name: string; likes: number }) => {
+const Component = ({ name, likes, follow }: { name: string; likes: number; follow: () => void }) => {
   return (
-    <Text>
-      {name} - {likes}
-    </Text>
+    <View>
+      <Text>
+        {name} - {likes}
+      </Text>
+      <TouchableOpacity onPress={follow}>
+        <Text>Deixar de seguir</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
