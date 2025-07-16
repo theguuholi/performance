@@ -20,14 +20,15 @@ const Home = () => {
   // useCallback memoriza a funcao
   // useCallback e para memorizar uma funcao
 
+  // evite qualquer calculo dentro do componente
+  // faca o calculo na hora da chamada  do json e carregar os dados, faca os calculos nele. 
+  // tratar os dados antes e depois passar para o render
   return (
     <View>
       <Text>Produtos</Text>
       <TextInput onChangeText={setName} placeholder="Nome do Cliente" />
       <Button title="Adicionar" onPress={handleSearch} />
-      <ScrollView>
         <SearchResults data={data} follow={handleFollow} />
-      </ScrollView>
     </View>
   );
 };
