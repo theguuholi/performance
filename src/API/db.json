@@ -1,0 +1,55 @@
+{
+  "friends": [
+    {
+      "id": "0",
+      "name": "Friend 0",
+      "likes": 45
+    },
+    {
+      "id": "1",
+      "name": "Friend 1",
+      "likes": 78
+    },
+    {
+      "id": "2",
+      "name": "Friend 2",
+      "likes": 23
+    },
+    {
+      "id": "3",
+      "name": "Friend 3",
+      "likes": 91
+    },
+    {
+      "id": "4",
+      "name": "Friend 4",
+      "likes": 12
+    }
+    ,
+    {
+      "id": "5",
+      "name": "Friend 5",
+      "likes": 67
+    },
+    {
+      "id": "6", 
+      "name": "Friend 6",
+      "likes": 34
+    },
+    {
+      "id": "7",
+      "name": "Friend 7", 
+      "likes": 89
+    },
+    {
+      "id": "8",
+      "name": "Friend 8",
+      "likes": 56
+    },
+    {
+      "id": "9",
+      "name": "Friend 9",
+      "likes": 43
+    }
+  ]
+} 
