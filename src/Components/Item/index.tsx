@@ -13,6 +13,7 @@ const Item = memo(Component, (prevProps, nextProps) => {
   return Object.is(prevProps, nextProps);
 });
 
+// indicado para componentes puros
 // criterio de comparacao para re-renderizar o componente
 // se o nome e o numero de likes forem iguais, o componente nao sera re-renderizado
 // se o nome e o numero de likes forem diferentes, o componente sera re-renderizado

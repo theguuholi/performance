@@ -6,6 +6,7 @@ const Home = () => {
   const [name, setName] = useState("");
   const [data, setData] = useState([]);
   // tem components que nao precisam ser recalculados sempre
+  // useMemo e para memorizar um valor em resumo. NAO UTILIZAR CALCULOS SIMPLES
 
   const handleSearch = async () => {
     const response = await fetch(`http://localhost:3001/friends?q=${name}`);
