@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
+import lodash from "lodash";
 
 const Component = ({ name, likes, follow }: { name: string; likes: number; follow: () => void }) => {
   return (
@@ -15,7 +16,8 @@ const Component = ({ name, likes, follow }: { name: string; likes: number; follo
 };
 
 const Item = memo(Component, (prevProps, nextProps) => {
-  return Object.is(prevProps, nextProps);
+  // return Object.is(prevProps, nextProps);
+  return lodash.isEqual(prevProps, nextProps);
 });
 
 // indicado para componentes puros
